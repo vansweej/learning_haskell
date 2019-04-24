@@ -23,3 +23,7 @@ main = do
     let x = eval ( a )
     putStr "Result: "
     print (x)
+    let b = Div (Val 6) (Val 0)
+    let y = eval ( b )
+    putStr "Result: "
+    print (y)
