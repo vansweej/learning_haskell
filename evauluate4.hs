@@ -10,9 +10,9 @@ safediv n m = if m==0 then
 
 eval :: Expr -> Maybe Int
 eval (Val n) = return n
-eval (Div x y) = eval x >>= (\n ->
-                 eval y >>= (\m ->
-                 safediv n m))
+eval (Div x y) = do n <- eval x
+                    m <- eval y
+                    safediv n m
                 
 
 main :: IO()
